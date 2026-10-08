@@ -1,0 +1,95 @@
+[project]
+name = "favision"
+version = "2026a0"
+description = "Automated Failure Analysis (FA) image analysis for electronic and semiconductor components"
+readme = "README.md"
+license = "LGPL-3.0-or-later"
+license-files = ["LICENSE*"]
+authors = [
+    { name = "Felipe de Jesus Hernandez Diaz" },
+    { name = "Diego-Sealtiel Valderrama Garcia", email = "sealtielfreak@yandex.com" },
+    { name = "Omar Alvarez Calvillo" },
+    { name = "Christopher Gonzales" },
+    { name = "Ismael Villa" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "opencv-python-headless>=4.10",
+    "torch>=2.8",
+    "typer>=0.15",
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Console",
+    "Environment :: GPU",
+    "Environment :: GPU :: NVIDIA CUDA",
+    "Environment :: GPU :: NVIDIA CUDA :: 12",
+    "Environment :: GPU :: NVIDIA CUDA :: 12 :: 12.6",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Manufacturing",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Natural Language :: Spanish",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+
+[project.scripts]
+favision = "favision:main"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.0",
+    "ruff>=0.13.0",
+    "pytest>=8.3.0",
+    "mkdocs>=1.6.0",
+    "mkdocs-material>=9.6.0",
+    "mkdocstrings[python]>=0.28.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[[tool.uv.index]]
+url = "https://download.pytorch.org/whl/cu126"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+strict = true
+python_version = "3.10"
+show_error_codes = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_errors = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
