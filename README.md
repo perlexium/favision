@@ -10,8 +10,8 @@ cracks, thicknesses, dimensions and other anomalies.
 FA Vision Jalisco reduces manual inspection, measurement and documentation work,
 providing quantitative, traceable results as a support tool for the FA engineer.
 
-- Project site: https://sites.google.com/alumnos.udg.mx/fa-vision-jalisco
-- Demo: https://sites.google.com/view/fa-vision-jalisco
+- Project site: [sites.google.com/alumnos.udg.mx/fa-vision-jalisco](https://sites.google.com/alumnos.udg.mx/fa-vision-jalisco)
+- Demo (private): [sites.google.com/view/fa-vision-jalisco](https://sites.google.com/view/fa-vision-jalisco)
 - Roadmap: [`ROADMAP.md`](ROADMAP.md)
 - References: [`REFERENCES.md`](REFERENCES.md)
 - Documentation: `uv run mkdocs serve` (pages in `docs/`)
@@ -133,7 +133,7 @@ Tooling:
 - `ruff` for lint + format, `target-version = "py310"`
 - `mypy` in `strict` mode, `python_version = "3.10"`
 - `pytest` with `testpaths = ["tests"]`, tests in `tests/test_*.py`
-- `MkDocs` with `material` theme + `mkdocstrings[python]`, config in `mkdocs.yml`, pages in `docs/`
+- `MkDocs` with `material` theme + `mkdocstrings[python]`, `htmlproofer` link checking, config in `mkdocs.yml`, pages in `docs/`
 
 ## Project structure
 
@@ -143,11 +143,16 @@ favision/
 │   ├── __init__.py
 │   └── py.typed
 ├── tests/test_main.py
-├── docs/index.md
-├── docs/getting-started.md
-├── docs/platform.md
-├── docs/roadmap.md
-├── docs/api.md
+├── docs/
+│   ├── index.md
+│   ├── getting-started.md
+│   ├── platform.md
+│   ├── roadmap.md
+│   ├── references.md
+│   ├── api.md
+│   ├── authors.md
+│   ├── assets/favicon.svg
+│   └── stylesheets/extra.css
 ├── mkdocs.yml
 ├── pyproject.toml
 ├── README.md

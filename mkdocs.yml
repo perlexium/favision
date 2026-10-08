@@ -1,20 +1,92 @@
 site_name: favision
 site_description: FA Vision Jalisco — automated Failure Analysis (FA) image analysis for electronic and semiconductor components
 site_author: sealtielfreak
+site_url: https://perlexium.github.io/favision/
+repo_url: https://github.com/perlexium/favision
+repo_name: perlexium/favision
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 FA Vision Jalisco
 
 theme:
   name: material
+  language: en
+  favicon: assets/favicon.svg
+  icon:
+    logo: material/microscope
+    repo: fontawesome/brands/github
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - toc.follow
     - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - search.suggest
+    - search.highlight
+    - search.share
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/perlexium/favision
+      name: favision on GitHub
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - tables
+  - abbr
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.magiclink
+  - pymdownx.keys
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
 
@@ -25,6 +97,10 @@ plugins:
         python:
           options:
             show_source: true
+  - htmlproofer:
+      enabled: true
+      raise_error: true
+      validate_external_urls: false
 
 nav:
   - Home: index.md
@@ -33,3 +109,4 @@ nav:
   - Roadmap: roadmap.md
   - References: references.md
   - API: api.md
+  - Authors: authors.md

@@ -12,8 +12,8 @@ providing quantitative, traceable results as a support tool for the FA engineer.
     Pre-MVP / definition stage (Circuito 14). No functional product, users or
     commercial validation yet. See the [Roadmap](roadmap.md).
 
-- Project site: https://sites.google.com/alumnos.udg.mx/fa-vision-jalisco
-- Demo: https://sites.google.com/view/fa-vision-jalisco
+- Project site: [sites.google.com/alumnos.udg.mx/fa-vision-jalisco](https://sites.google.com/alumnos.udg.mx/fa-vision-jalisco)
+- Demo (private): [sites.google.com/view/fa-vision-jalisco](https://sites.google.com/view/fa-vision-jalisco)
 
 ## What it does
 

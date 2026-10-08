@@ -1,0 +1,22 @@
+/*
+ * favision — custom light sky-blue color scheme.
+ *
+ * Material is told to use custom colors via `theme.palette.primary/accent:
+ * custom` in mkdocs.yml; the actual values live here. The light-blue header
+ * needs dark text (`--md-primary-bg-color`) to keep sufficient contrast.
+ */
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #87ceeb;
+  --md-primary-fg-color--light: #b8e2f2;
+  --md-primary-fg-color--dark: #4fb3d9;
+  --md-primary-bg-color: #0d3b52;
+  --md-accent-fg-color: #1c7fb0;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1f6f8b;
+  --md-primary-fg-color--light: #2a86a6;
+  --md-primary-fg-color--dark: #185b72;
+  --md-accent-fg-color: #7dd3fc;
+}
