@@ -1,0 +1,35 @@
+site_name: favision
+site_description: FA Vision Jalisco — automated Failure Analysis (FA) image analysis for electronic and semiconductor components
+site_author: sealtielfreak
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Platform Support: platform.md
+  - Roadmap: roadmap.md
+  - References: references.md
+  - API: api.md
